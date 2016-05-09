@@ -48,6 +48,7 @@ describe Inspec::Plugins::RelFetcher do
     # extract folder structure buildup
     %w{/a /a/b /a/b/c}        => %w{c},
     %w{/a /a/b /a/b/c/d/e}    => %w{e},
+    %w{/a /a/b /a/c}          => %w{b c},
     # ignore pax_global_header, which are commonly seen in github tars and are not
     # ignored by all tar streaming tools, its not extracted by GNU tar since 1.14
     %w{/pax_global_header /a/b}    => %w{b},
